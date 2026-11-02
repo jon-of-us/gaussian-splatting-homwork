@@ -1,0 +1,9 @@
+# Install CUDA-enabled torch and matching torchvision separately for your platform.
+# PyCOLMAP is optional; see the README reconstruction instructions.
+numpy==2.2.6
+plyfile==1.1.5
+tqdm>=4.66
+matplotlib==3.10.7
+opencv-python-headless==4.12.0.88
+pytest==9.1.1
+ninja>=1.11
