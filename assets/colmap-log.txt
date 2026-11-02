@@ -1,0 +1,1906 @@
+Loading database
+Loading rigs...
+ 0 in 0.000s
+Loading cameras...
+ 0 in 0.000s
+Loading frames...
+ 0 in 0.000s
+Loading matches...
+ 0 in 0.000s
+Loading images...
+ 0 in 0.000s (connected 0, loaded 0)
+Loading pose priors...
+ 0 in 0.000s
+Building correspondence graph...
+ in 0.000s (ignored 0)
+Elapsed time: 0.000 [minutes]
+W: No images with matches
+=== Feature extraction ===
+Creating SIFT GPU feature extractor
+Processed file [1/220]
+  Name:            001.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #1 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3545 (SIFT)
+Processed file [2/220]
+  Name:            002.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #2 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3546 (SIFT)
+Processed file [3/220]
+  Name:            003.jpg
+  Dimensions:      1398 x 1438
+  Camera:          #3 - SIMPLE_RADIAL
+  Focal Length:    1725.60px
+  Features:        3504 (SIFT)
+Processed file [4/220]
+  Name:            004.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #4 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3512 (SIFT)
+Processed file [5/220]
+  Name:            005.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #5 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3600 (SIFT)
+Processed file [6/220]
+  Name:            006.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #6 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3559 (SIFT)
+Processed file [7/220]
+  Name:            007.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #7 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3491 (SIFT)
+Processed file [8/220]
+  Name:            008.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #8 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3540 (SIFT)
+Processed file [9/220]
+  Name:            009.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #9 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3663 (SIFT)
+Processed file [10/220]
+  Name:            010.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #10 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3748 (SIFT)
+Processed file [11/220]
+  Name:            011.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #11 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3576 (SIFT)
+Processed file [12/220]
+  Name:            012.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #12 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3519 (SIFT)
+Processed file [13/220]
+  Name:            013.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #13 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3532 (SIFT)
+Processed file [14/220]
+  Name:            014.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #14 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3558 (SIFT)
+Processed file [15/220]
+  Name:            015.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #15 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3637 (SIFT)
+Processed file [16/220]
+  Name:            016.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #16 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3562 (SIFT)
+Processed file [17/220]
+  Name:            017.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #17 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3584 (SIFT)
+Processed file [18/220]
+  Name:            018.jpg
+  Dimensions:      1399 x 1440
+  Camera:          #18 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3782 (SIFT)
+Processed file [19/220]
+  Name:            019.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #19 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3578 (SIFT)
+Processed file [20/220]
+  Name:            020.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #20 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3543 (SIFT)
+Processed file [21/220]
+  Name:            021.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #21 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3521 (SIFT)
+Processed file [22/220]
+  Name:            022.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #22 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3468 (SIFT)
+Processed file [23/220]
+  Name:            023.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #23 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3626 (SIFT)
+Processed file [24/220]
+  Name:            024.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #24 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3623 (SIFT)
+Processed file [25/220]
+  Name:            025.jpg
+  Dimensions:      1398 x 1438
+  Camera:          #25 - SIMPLE_RADIAL
+  Focal Length:    1725.60px
+  Features:        3657 (SIFT)
+Processed file [26/220]
+  Name:            026.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #26 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3614 (SIFT)
+Processed file [27/220]
+  Name:            027.jpg
+  Dimensions:      1398 x 1438
+  Camera:          #27 - SIMPLE_RADIAL
+  Focal Length:    1725.60px
+  Features:        3616 (SIFT)
+Processed file [28/220]
+  Name:            028.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #28 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3683 (SIFT)
+Processed file [29/220]
+  Name:            029.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #29 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        3713 (SIFT)
+Processed file [30/220]
+  Name:            030.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #30 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3900 (SIFT)
+Processed file [31/220]
+  Name:            031.jpg
+  Dimensions:      1400 x 1441
+  Camera:          #31 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3886 (SIFT)
+Processed file [32/220]
+  Name:            032.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #32 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3826 (SIFT)
+Processed file [33/220]
+  Name:            033.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #33 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3846 (SIFT)
+Processed file [34/220]
+  Name:            034.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #34 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3778 (SIFT)
+Processed file [35/220]
+  Name:            035.jpg
+  Dimensions:      1402 x 1442
+  Camera:          #35 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3664 (SIFT)
+Processed file [36/220]
+  Name:            036.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #36 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3614 (SIFT)
+Processed file [37/220]
+  Name:            037.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #37 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3540 (SIFT)
+Processed file [38/220]
+  Name:            038.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #38 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3594 (SIFT)
+Processed file [39/220]
+  Name:            039.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #39 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3551 (SIFT)
+Processed file [40/220]
+  Name:            040.jpg
+  Dimensions:      1402 x 1443
+  Camera:          #40 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3511 (SIFT)
+Processed file [41/220]
+  Name:            041.jpg
+  Dimensions:      1402 x 1443
+  Camera:          #41 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3513 (SIFT)
+Processed file [42/220]
+  Name:            042.jpg
+  Dimensions:      1402 x 1442
+  Camera:          #42 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3544 (SIFT)
+Processed file [43/220]
+  Name:            043.jpg
+  Dimensions:      1403 x 1444
+  Camera:          #43 - SIMPLE_RADIAL
+  Focal Length:    1732.80px
+  Features:        3437 (SIFT)
+Processed file [44/220]
+  Name:            044.jpg
+  Dimensions:      1402 x 1442
+  Camera:          #44 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3530 (SIFT)
+Processed file [45/220]
+  Name:            045.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #45 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3369 (SIFT)
+Processed file [46/220]
+  Name:            046.jpg
+  Dimensions:      1402 x 1443
+  Camera:          #46 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3372 (SIFT)
+Processed file [47/220]
+  Name:            047.jpg
+  Dimensions:      1403 x 1444
+  Camera:          #47 - SIMPLE_RADIAL
+  Focal Length:    1732.80px
+  Features:        3195 (SIFT)
+Processed file [48/220]
+  Name:            048.jpg
+  Dimensions:      1405 x 1445
+  Camera:          #48 - SIMPLE_RADIAL
+  Focal Length:    1734.00px
+  Features:        3097 (SIFT)
+Processed file [49/220]
+  Name:            049.jpg
+  Dimensions:      1404 x 1445
+  Camera:          #49 - SIMPLE_RADIAL
+  Focal Length:    1734.00px
+  Features:        3090 (SIFT)
+Processed file [50/220]
+  Name:            050.jpg
+  Dimensions:      1406 x 1446
+  Camera:          #50 - SIMPLE_RADIAL
+  Focal Length:    1735.20px
+  Features:        3058 (SIFT)
+Processed file [51/220]
+  Name:            051.jpg
+  Dimensions:      1405 x 1446
+  Camera:          #51 - SIMPLE_RADIAL
+  Focal Length:    1735.20px
+  Features:        3003 (SIFT)
+Processed file [52/220]
+  Name:            052.jpg
+  Dimensions:      1406 x 1447
+  Camera:          #52 - SIMPLE_RADIAL
+  Focal Length:    1736.40px
+  Features:        3124 (SIFT)
+Processed file [53/220]
+  Name:            053.jpg
+  Dimensions:      1407 x 1448
+  Camera:          #53 - SIMPLE_RADIAL
+  Focal Length:    1737.60px
+  Features:        3096 (SIFT)
+Processed file [54/220]
+  Name:            054.jpg
+  Dimensions:      1407 x 1447
+  Camera:          #54 - SIMPLE_RADIAL
+  Focal Length:    1736.40px
+  Features:        3047 (SIFT)
+Processed file [55/220]
+  Name:            055.jpg
+  Dimensions:      1408 x 1449
+  Camera:          #55 - SIMPLE_RADIAL
+  Focal Length:    1738.80px
+  Features:        2978 (SIFT)
+Processed file [56/220]
+  Name:            056.jpg
+  Dimensions:      1411 x 1452
+  Camera:          #56 - SIMPLE_RADIAL
+  Focal Length:    1742.40px
+  Features:        2824 (SIFT)
+Processed file [57/220]
+  Name:            057.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #57 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2711 (SIFT)
+Processed file [58/220]
+  Name:            058.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #58 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2722 (SIFT)
+Processed file [59/220]
+  Name:            059.jpg
+  Dimensions:      1410 x 1451
+  Camera:          #59 - SIMPLE_RADIAL
+  Focal Length:    1741.20px
+  Features:        2765 (SIFT)
+Processed file [60/220]
+  Name:            060.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #60 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2700 (SIFT)
+Processed file [61/220]
+  Name:            061.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #61 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2692 (SIFT)
+Processed file [62/220]
+  Name:            062.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #62 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2668 (SIFT)
+Processed file [63/220]
+  Name:            063.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #63 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2691 (SIFT)
+Processed file [64/220]
+  Name:            064.jpg
+  Dimensions:      1409 x 1449
+  Camera:          #64 - SIMPLE_RADIAL
+  Focal Length:    1738.80px
+  Features:        2553 (SIFT)
+Processed file [65/220]
+  Name:            065.jpg
+  Dimensions:      1411 x 1452
+  Camera:          #65 - SIMPLE_RADIAL
+  Focal Length:    1742.40px
+  Features:        2452 (SIFT)
+Processed file [66/220]
+  Name:            066.jpg
+  Dimensions:      1412 x 1453
+  Camera:          #66 - SIMPLE_RADIAL
+  Focal Length:    1743.60px
+  Features:        2396 (SIFT)
+Processed file [67/220]
+  Name:            067.jpg
+  Dimensions:      1412 x 1453
+  Camera:          #67 - SIMPLE_RADIAL
+  Focal Length:    1743.60px
+  Features:        2278 (SIFT)
+Processed file [68/220]
+  Name:            068.jpg
+  Dimensions:      1414 x 1455
+  Camera:          #68 - SIMPLE_RADIAL
+  Focal Length:    1746.00px
+  Features:        2054 (SIFT)
+Processed file [69/220]
+  Name:            069.jpg
+  Dimensions:      1415 x 1456
+  Camera:          #69 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        1812 (SIFT)
+Processed file [70/220]
+  Name:            070.jpg
+  Dimensions:      1430 x 1473
+  Camera:          #70 - SIMPLE_RADIAL
+  Focal Length:    1767.60px
+  Features:        1999 (SIFT)
+Processed file [71/220]
+  Name:            071.jpg
+  Dimensions:      1426 x 1468
+  Camera:          #71 - SIMPLE_RADIAL
+  Focal Length:    1761.60px
+  Features:        2071 (SIFT)
+Processed file [72/220]
+  Name:            072.jpg
+  Dimensions:      1425 x 1468
+  Camera:          #72 - SIMPLE_RADIAL
+  Focal Length:    1761.60px
+  Features:        2154 (SIFT)
+Processed file [73/220]
+  Name:            073.jpg
+  Dimensions:      1419 x 1461
+  Camera:          #73 - SIMPLE_RADIAL
+  Focal Length:    1753.20px
+  Features:        2299 (SIFT)
+Processed file [74/220]
+  Name:            074.jpg
+  Dimensions:      1418 x 1460
+  Camera:          #74 - SIMPLE_RADIAL
+  Focal Length:    1752.00px
+  Features:        2578 (SIFT)
+Processed file [75/220]
+  Name:            075.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #75 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2625 (SIFT)
+Processed file [76/220]
+  Name:            076.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #76 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        2841 (SIFT)
+Processed file [77/220]
+  Name:            077.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #77 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3043 (SIFT)
+Processed file [78/220]
+  Name:            078.jpg
+  Dimensions:      1414 x 1456
+  Camera:          #78 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        3187 (SIFT)
+Processed file [79/220]
+  Name:            079.jpg
+  Dimensions:      1414 x 1456
+  Camera:          #79 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        3231 (SIFT)
+Processed file [80/220]
+  Name:            080.jpg
+  Dimensions:      1414 x 1456
+  Camera:          #80 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        3290 (SIFT)
+Processed file [81/220]
+  Name:            081.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #81 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        3376 (SIFT)
+Processed file [82/220]
+  Name:            082.jpg
+  Dimensions:      1415 x 1456
+  Camera:          #82 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        3306 (SIFT)
+Processed file [83/220]
+  Name:            083.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #83 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        3332 (SIFT)
+Processed file [84/220]
+  Name:            084.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #84 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3397 (SIFT)
+Processed file [85/220]
+  Name:            085.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #85 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        3336 (SIFT)
+Processed file [86/220]
+  Name:            086.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #86 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        3464 (SIFT)
+Processed file [87/220]
+  Name:            087.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #87 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3427 (SIFT)
+Processed file [88/220]
+  Name:            088.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #88 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3527 (SIFT)
+Processed file [89/220]
+  Name:            089.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #89 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        3545 (SIFT)
+Processed file [90/220]
+  Name:            090.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #90 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3625 (SIFT)
+Processed file [91/220]
+  Name:            091.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #91 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3815 (SIFT)
+Processed file [92/220]
+  Name:            092.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #92 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3817 (SIFT)
+Processed file [93/220]
+  Name:            093.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #93 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        3870 (SIFT)
+Processed file [94/220]
+  Name:            094.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #94 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3868 (SIFT)
+Processed file [95/220]
+  Name:            095.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #95 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        3853 (SIFT)
+Processed file [96/220]
+  Name:            096.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #96 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        4027 (SIFT)
+Processed file [97/220]
+  Name:            097.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #97 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        3936 (SIFT)
+Processed file [98/220]
+  Name:            098.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #98 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        3997 (SIFT)
+Processed file [99/220]
+  Name:            099.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #99 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4075 (SIFT)
+Processed file [100/220]
+  Name:            100.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #100 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4176 (SIFT)
+Processed file [101/220]
+  Name:            101.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #101 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4173 (SIFT)
+Processed file [102/220]
+  Name:            102.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #102 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4087 (SIFT)
+Processed file [103/220]
+  Name:            103.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #103 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4158 (SIFT)
+Processed file [104/220]
+  Name:            104.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #104 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4173 (SIFT)
+Processed file [105/220]
+  Name:            105.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #105 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4217 (SIFT)
+Processed file [106/220]
+  Name:            106.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #106 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4216 (SIFT)
+Processed file [107/220]
+  Name:            107.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #107 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4212 (SIFT)
+Processed file [108/220]
+  Name:            108.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #108 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4187 (SIFT)
+Processed file [109/220]
+  Name:            109.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #109 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4182 (SIFT)
+Processed file [110/220]
+  Name:            110.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #110 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4136 (SIFT)
+Processed file [111/220]
+  Name:            111.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #111 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4257 (SIFT)
+Processed file [112/220]
+  Name:            112.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #112 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4202 (SIFT)
+Processed file [113/220]
+  Name:            113.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #113 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4222 (SIFT)
+Processed file [114/220]
+  Name:            114.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #114 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4180 (SIFT)
+Processed file [115/220]
+  Name:            115.jpg
+  Dimensions:      1415 x 1456
+  Camera:          #115 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        4175 (SIFT)
+Processed file [116/220]
+  Name:            116.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #116 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4188 (SIFT)
+Processed file [117/220]
+  Name:            117.jpg
+  Dimensions:      1415 x 1456
+  Camera:          #117 - SIMPLE_RADIAL
+  Focal Length:    1747.20px
+  Features:        4164 (SIFT)
+Processed file [118/220]
+  Name:            118.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #118 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4109 (SIFT)
+Processed file [119/220]
+  Name:            119.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #119 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4179 (SIFT)
+Processed file [120/220]
+  Name:            120.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #120 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4099 (SIFT)
+Processed file [121/220]
+  Name:            121.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #121 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4160 (SIFT)
+Processed file [122/220]
+  Name:            122.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #122 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4085 (SIFT)
+Processed file [123/220]
+  Name:            123.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #123 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4173 (SIFT)
+Processed file [124/220]
+  Name:            124.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #124 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4128 (SIFT)
+Processed file [125/220]
+  Name:            125.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #125 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4137 (SIFT)
+Processed file [126/220]
+  Name:            126.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #126 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4159 (SIFT)
+Processed file [127/220]
+  Name:            127.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #127 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4132 (SIFT)
+Processed file [128/220]
+  Name:            128.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #128 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4114 (SIFT)
+Processed file [129/220]
+  Name:            129.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #129 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4089 (SIFT)
+Processed file [130/220]
+  Name:            130.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #130 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4155 (SIFT)
+Processed file [131/220]
+  Name:            131.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #131 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4173 (SIFT)
+Processed file [132/220]
+  Name:            132.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #132 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4127 (SIFT)
+Processed file [133/220]
+  Name:            133.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #133 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        4107 (SIFT)
+Processed file [134/220]
+  Name:            134.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #134 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4124 (SIFT)
+Processed file [135/220]
+  Name:            135.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #135 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4129 (SIFT)
+Processed file [136/220]
+  Name:            136.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #136 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4196 (SIFT)
+Processed file [137/220]
+  Name:            137.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #137 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4111 (SIFT)
+Processed file [138/220]
+  Name:            138.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #138 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4080 (SIFT)
+Processed file [139/220]
+  Name:            139.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #139 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        4004 (SIFT)
+Processed file [140/220]
+  Name:            140.jpg
+  Dimensions:      1416 x 1457
+  Camera:          #140 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        3986 (SIFT)
+Processed file [141/220]
+  Name:            141.jpg
+  Dimensions:      1415 x 1457
+  Camera:          #141 - SIMPLE_RADIAL
+  Focal Length:    1748.40px
+  Features:        3917 (SIFT)
+Processed file [142/220]
+  Name:            142.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #142 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3917 (SIFT)
+Processed file [143/220]
+  Name:            143.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #143 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3878 (SIFT)
+Processed file [144/220]
+  Name:            144.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #144 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3868 (SIFT)
+Processed file [145/220]
+  Name:            145.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #145 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3789 (SIFT)
+Processed file [146/220]
+  Name:            146.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #146 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3740 (SIFT)
+Processed file [147/220]
+  Name:            147.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #147 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3759 (SIFT)
+Processed file [148/220]
+  Name:            148.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #148 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3636 (SIFT)
+Processed file [149/220]
+  Name:            149.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #149 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3466 (SIFT)
+Processed file [150/220]
+  Name:            150.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #150 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3430 (SIFT)
+Processed file [151/220]
+  Name:            151.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #151 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3348 (SIFT)
+Processed file [152/220]
+  Name:            152.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #152 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        3186 (SIFT)
+Processed file [153/220]
+  Name:            153.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #153 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2888 (SIFT)
+Processed file [154/220]
+  Name:            154.jpg
+  Dimensions:      1418 x 1459
+  Camera:          #154 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2744 (SIFT)
+Processed file [155/220]
+  Name:            155.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #155 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2696 (SIFT)
+Processed file [156/220]
+  Name:            156.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #156 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2651 (SIFT)
+Processed file [157/220]
+  Name:            157.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #157 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2618 (SIFT)
+Processed file [158/220]
+  Name:            158.jpg
+  Dimensions:      1417 x 1458
+  Camera:          #158 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2647 (SIFT)
+Processed file [159/220]
+  Name:            159.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #159 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2622 (SIFT)
+Processed file [160/220]
+  Name:            160.jpg
+  Dimensions:      1418 x 1460
+  Camera:          #160 - SIMPLE_RADIAL
+  Focal Length:    1752.00px
+  Features:        2579 (SIFT)
+Processed file [161/220]
+  Name:            161.jpg
+  Dimensions:      1418 x 1459
+  Camera:          #161 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2581 (SIFT)
+Processed file [162/220]
+  Name:            162.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #162 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2583 (SIFT)
+Processed file [163/220]
+  Name:            163.jpg
+  Dimensions:      1417 x 1459
+  Camera:          #163 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2594 (SIFT)
+Processed file [164/220]
+  Name:            164.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #164 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2459 (SIFT)
+Processed file [165/220]
+  Name:            165.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #165 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2493 (SIFT)
+Processed file [166/220]
+  Name:            166.jpg
+  Dimensions:      1418 x 1460
+  Camera:          #166 - SIMPLE_RADIAL
+  Focal Length:    1752.00px
+  Features:        2332 (SIFT)
+Processed file [167/220]
+  Name:            167.jpg
+  Dimensions:      1418 x 1460
+  Camera:          #167 - SIMPLE_RADIAL
+  Focal Length:    1752.00px
+  Features:        2272 (SIFT)
+Processed file [168/220]
+  Name:            168.jpg
+  Dimensions:      1418 x 1459
+  Camera:          #168 - SIMPLE_RADIAL
+  Focal Length:    1750.80px
+  Features:        2165 (SIFT)
+Processed file [169/220]
+  Name:            169.jpg
+  Dimensions:      1421 x 1463
+  Camera:          #169 - SIMPLE_RADIAL
+  Focal Length:    1755.60px
+  Features:        2147 (SIFT)
+Processed file [170/220]
+  Name:            170.jpg
+  Dimensions:      1420 x 1462
+  Camera:          #170 - SIMPLE_RADIAL
+  Focal Length:    1754.40px
+  Features:        2015 (SIFT)
+Processed file [171/220]
+  Name:            171.jpg
+  Dimensions:      1418 x 1460
+  Camera:          #171 - SIMPLE_RADIAL
+  Focal Length:    1752.00px
+  Features:        2081 (SIFT)
+Processed file [172/220]
+  Name:            172.jpg
+  Dimensions:      1419 x 1461
+  Camera:          #172 - SIMPLE_RADIAL
+  Focal Length:    1753.20px
+  Features:        2094 (SIFT)
+Processed file [173/220]
+  Name:            173.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #173 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2235 (SIFT)
+Processed file [174/220]
+  Name:            174.jpg
+  Dimensions:      1414 x 1455
+  Camera:          #174 - SIMPLE_RADIAL
+  Focal Length:    1746.00px
+  Features:        2282 (SIFT)
+Processed file [175/220]
+  Name:            175.jpg
+  Dimensions:      1413 x 1454
+  Camera:          #175 - SIMPLE_RADIAL
+  Focal Length:    1744.80px
+  Features:        2257 (SIFT)
+Processed file [176/220]
+  Name:            176.jpg
+  Dimensions:      1411 x 1452
+  Camera:          #176 - SIMPLE_RADIAL
+  Focal Length:    1742.40px
+  Features:        2469 (SIFT)
+Processed file [177/220]
+  Name:            177.jpg
+  Dimensions:      1405 x 1446
+  Camera:          #177 - SIMPLE_RADIAL
+  Focal Length:    1735.20px
+  Features:        2538 (SIFT)
+Processed file [178/220]
+  Name:            178.jpg
+  Dimensions:      1402 x 1443
+  Camera:          #178 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        2614 (SIFT)
+Processed file [179/220]
+  Name:            179.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #179 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        2809 (SIFT)
+Processed file [180/220]
+  Name:            180.jpg
+  Dimensions:      1400 x 1441
+  Camera:          #180 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        2852 (SIFT)
+Processed file [181/220]
+  Name:            181.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #181 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        2905 (SIFT)
+Processed file [182/220]
+  Name:            182.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #182 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3017 (SIFT)
+Processed file [183/220]
+  Name:            183.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #183 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3061 (SIFT)
+Processed file [184/220]
+  Name:            184.jpg
+  Dimensions:      1399 x 1439
+  Camera:          #184 - SIMPLE_RADIAL
+  Focal Length:    1726.80px
+  Features:        2933 (SIFT)
+Processed file [185/220]
+  Name:            185.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #185 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3245 (SIFT)
+Processed file [186/220]
+  Name:            186.jpg
+  Dimensions:      1401 x 1442
+  Camera:          #186 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3135 (SIFT)
+Processed file [187/220]
+  Name:            187.jpg
+  Dimensions:      1402 x 1442
+  Camera:          #187 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3140 (SIFT)
+Processed file [188/220]
+  Name:            188.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #188 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3221 (SIFT)
+Processed file [189/220]
+  Name:            189.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #189 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3240 (SIFT)
+Processed file [190/220]
+  Name:            190.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #190 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3319 (SIFT)
+Processed file [191/220]
+  Name:            191.jpg
+  Dimensions:      1401 x 1442
+  Camera:          #191 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3215 (SIFT)
+Processed file [192/220]
+  Name:            192.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #192 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3314 (SIFT)
+Processed file [193/220]
+  Name:            193.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #193 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3411 (SIFT)
+Processed file [194/220]
+  Name:            194.jpg
+  Dimensions:      1400 x 1441
+  Camera:          #194 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3538 (SIFT)
+Processed file [195/220]
+  Name:            195.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #195 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3449 (SIFT)
+Processed file [196/220]
+  Name:            196.jpg
+  Dimensions:      1400 x 1441
+  Camera:          #196 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3636 (SIFT)
+Processed file [197/220]
+  Name:            197.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #197 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3642 (SIFT)
+Processed file [198/220]
+  Name:            198.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #198 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3500 (SIFT)
+Processed file [199/220]
+  Name:            199.jpg
+  Dimensions:      1402 x 1442
+  Camera:          #199 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3423 (SIFT)
+Processed file [200/220]
+  Name:            200.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #200 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3188 (SIFT)
+Processed file [201/220]
+  Name:            201.jpg
+  Dimensions:      1403 x 1443
+  Camera:          #201 - SIMPLE_RADIAL
+  Focal Length:    1731.60px
+  Features:        3215 (SIFT)
+Processed file [202/220]
+  Name:            202.jpg
+  Dimensions:      1400 x 1441
+  Camera:          #202 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        3382 (SIFT)
+Processed file [203/220]
+  Name:            203.jpg
+  Dimensions:      1401 x 1442
+  Camera:          #203 - SIMPLE_RADIAL
+  Focal Length:    1730.40px
+  Features:        3094 (SIFT)
+Processed file [204/220]
+  Name:            204.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #204 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3291 (SIFT)
+Processed file [205/220]
+  Name:            205.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #205 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3208 (SIFT)
+Processed file [206/220]
+  Name:            206.jpg
+  Dimensions:      1400 x 1440
+  Camera:          #206 - SIMPLE_RADIAL
+  Focal Length:    1728.00px
+  Features:        3195 (SIFT)
+Processed file [207/220]
+  Name:            207.jpg
+  Dimensions:      1401 x 1441
+  Camera:          #207 - SIMPLE_RADIAL
+  Focal Length:    1729.20px
+  Features:        2706 (SIFT)
+Processed file [208/220]
+  Name:            208.jpg
+  Dimensions:      1424 x 1467
+  Camera:          #208 - SIMPLE_RADIAL
+  Focal Length:    1760.40px
+  Features:        2277 (SIFT)
+Processed file [209/220]
+  Name:            209.jpg
+  Dimensions:      1363 x 1402
+  Camera:          #209 - SIMPLE_RADIAL
+  Focal Length:    1682.40px
+  Features:        1805 (SIFT)
+Processed file [210/220]
+  Name:            210.jpg
+  Dimensions:      1451 x 1496
+  Camera:          #210 - SIMPLE_RADIAL
+  Focal Length:    1795.20px
+  Features:        1878 (SIFT)
+Processed file [211/220]
+  Name:            211.jpg
+  Dimensions:      1429 x 1472
+  Camera:          #211 - SIMPLE_RADIAL
+  Focal Length:    1766.40px
+  Features:        3031 (SIFT)
+Processed file [212/220]
+  Name:            212.jpg
+  Dimensions:      1424 x 1466
+  Camera:          #212 - SIMPLE_RADIAL
+  Focal Length:    1759.20px
+  Features:        3387 (SIFT)
+Processed file [213/220]
+  Name:            213.jpg
+  Dimensions:      1422 x 1465
+  Camera:          #213 - SIMPLE_RADIAL
+  Focal Length:    1758.00px
+  Features:        3488 (SIFT)
+Processed file [214/220]
+  Name:            214.jpg
+  Dimensions:      1420 x 1462
+  Camera:          #214 - SIMPLE_RADIAL
+  Focal Length:    1754.40px
+  Features:        3491 (SIFT)
+Processed file [215/220]
+  Name:            215.jpg
+  Dimensions:      1420 x 1462
+  Camera:          #215 - SIMPLE_RADIAL
+  Focal Length:    1754.40px
+  Features:        3582 (SIFT)
+Processed file [216/220]
+  Name:            216.jpg
+  Dimensions:      1420 x 1462
+  Camera:          #216 - SIMPLE_RADIAL
+  Focal Length:    1754.40px
+  Features:        3410 (SIFT)
+Processed file [217/220]
+  Name:            217.jpg
+  Dimensions:      1418 x 1460
+  Camera:          #217 - SIMPLE_RADIAL
+  Focal Length:    1752.00px
+  Features:        3196 (SIFT)
+Processed file [218/220]
+  Name:            218.jpg
+  Dimensions:      1409 x 1450
+  Camera:          #218 - SIMPLE_RADIAL
+  Focal Length:    1740.00px
+  Features:        2113 (SIFT)
+Processed file [219/220]
+  Name:            219.jpg
+  Dimensions:      1416 x 1458
+  Camera:          #219 - SIMPLE_RADIAL
+  Focal Length:    1749.60px
+  Features:        2323 (SIFT)
+Processed file [220/220]
+  Name:            220.jpg
+  Dimensions:      1419 x 1461
+  Camera:          #220 - SIMPLE_RADIAL
+  Focal Length:    1753.20px
+  Features:        2488 (SIFT)
+Elapsed time: 0.274 [minutes]
+=== Feature matching & geometric verification ===
+Creating SIFT GPU feature matcher
+Generating exhaustive image pairs...
+Processing block [1/5, 1/5]
+in 13.165s
+Processing block [1/5, 2/5]
+in 12.323s
+Processing block [1/5, 3/5]
+in 14.365s
+Processing block [1/5, 4/5]
+in 11.427s
+Processing block [1/5, 5/5]
+in 1.711s
+Processing block [2/5, 1/5]
+in 11.699s
+Processing block [2/5, 2/5]
+in 10.886s
+Processing block [2/5, 3/5]
+in 13.109s
+Processing block [2/5, 4/5]
+in 11.734s
+Processing block [2/5, 5/5]
+in 1.478s
+Processing block [3/5, 1/5]
+in 15.505s
+Processing block [3/5, 2/5]
+in 13.949s
+Processing block [3/5, 3/5]
+in 15.460s
+Processing block [3/5, 4/5]
+in 12.322s
+Processing block [3/5, 5/5]
+in 1.948s
+Processing block [4/5, 1/5]
+in 11.183s
+Processing block [4/5, 2/5]
+in 10.740s
+Processing block [4/5, 3/5]
+in 11.806s
+Processing block [4/5, 4/5]
+in 9.877s
+Processing block [4/5, 5/5]
+in 1.425s
+Processing block [5/5, 1/5]
+in 7.382s
+Processing block [5/5, 2/5]
+in 6.855s
+Processing block [5/5, 3/5]
+in 8.138s
+Processing block [5/5, 4/5]
+in 6.421s
+Processing block [5/5, 5/5]
+in 1.462s
+Elapsed time: 3.941 [minutes]
+Loading database
+Loading rigs...
+ 220 in 0.000s
+Loading cameras...
+ 220 in 0.000s
+Loading frames...
+ 220 in 0.000s
+Loading matches...
+ 22508 in 0.049s
+Loading images...
+ 220 in 0.014s (connected 220, loaded 220)
+Loading pose priors...
+ 0 in 0.000s
+Building correspondence graph...
+ in 0.629s (ignored 0)
+Elapsed time: 0.012 [minutes]
+Finding good initial image pair
+Registering initial image pair #112 and #122
+Global bundle adjustment
+Registering image #121 (num_reg_frames=2)
+=> Image sees 802 / 3942 points
+Retriangulation and Global bundle adjustment
+Registering image #120 (num_reg_frames=3)
+=> Image sees 1689 / 3922 points
+Retriangulation and Global bundle adjustment
+Registering image #119 (num_reg_frames=4)
+=> Image sees 1862 / 3931 points
+Retriangulation and Global bundle adjustment
+Registering image #118 (num_reg_frames=5)
+=> Image sees 2657 / 3866 points
+Retriangulation and Global bundle adjustment
+Registering image #117 (num_reg_frames=6)
+=> Image sees 2810 / 3793 points
+Retriangulation and Global bundle adjustment
+Registering image #116 (num_reg_frames=7)
+=> Image sees 2970 / 3854 points
+Retriangulation and Global bundle adjustment
+Registering image #115 (num_reg_frames=8)
+=> Image sees 3127 / 3894 points
+Retriangulation and Global bundle adjustment
+Registering image #114 (num_reg_frames=9)
+=> Image sees 3181 / 3907 points
+Retriangulation and Global bundle adjustment
+Registering image #113 (num_reg_frames=10)
+=> Image sees 3257 / 3873 points
+Retriangulation and Global bundle adjustment
+Registering image #123 (num_reg_frames=11)
+=> Image sees 3073 / 3711 points
+Registering image #111 (num_reg_frames=12)
+=> Image sees 3048 / 3931 points
+Retriangulation and Global bundle adjustment
+Registering image #124 (num_reg_frames=13)
+=> Image sees 3009 / 3743 points
+Registering image #125 (num_reg_frames=14)
+=> Image sees 3029 / 3843 points
+Retriangulation and Global bundle adjustment
+Registering image #126 (num_reg_frames=15)
+=> Image sees 3170 / 3913 points
+Registering image #127 (num_reg_frames=16)
+=> Image sees 3184 / 3886 points
+Retriangulation and Global bundle adjustment
+Registering image #128 (num_reg_frames=17)
+=> Image sees 3182 / 3871 points
+Registering image #129 (num_reg_frames=18)
+=> Image sees 3210 / 3860 points
+Retriangulation and Global bundle adjustment
+Registering image #130 (num_reg_frames=19)
+=> Image sees 3328 / 3962 points
+Registering image #132 (num_reg_frames=20)
+=> Image sees 3283 / 3976 points
+Retriangulation and Global bundle adjustment
+Registering image #135 (num_reg_frames=21)
+=> Image sees 3307 / 4002 points
+Registering image #136 (num_reg_frames=22)
+=> Image sees 3479 / 4058 points
+Registering image #137 (num_reg_frames=23)
+=> Image sees 3456 / 3953 points
+Retriangulation and Global bundle adjustment
+Registering image #131 (num_reg_frames=24)
+=> Image sees 3592 / 3989 points
+Registering image #134 (num_reg_frames=25)
+=> Image sees 3547 / 3979 points
+Registering image #133 (num_reg_frames=26)
+=> Image sees 3553 / 3952 points
+Retriangulation and Global bundle adjustment
+Registering image #138 (num_reg_frames=27)
+=> Image sees 3376 / 3763 points
+Registering image #139 (num_reg_frames=28)
+=> Image sees 3080 / 3519 points
+Registering image #110 (num_reg_frames=29)
+=> Image sees 3074 / 3983 points
+Retriangulation and Global bundle adjustment
+Registering image #109 (num_reg_frames=30)
+=> Image sees 3317 / 4063 points
+Registering image #106 (num_reg_frames=31)
+=> Image sees 3324 / 4090 points
+Registering image #105 (num_reg_frames=32)
+=> Image sees 3359 / 4065 points
+Retriangulation and Global bundle adjustment
+Registering image #108 (num_reg_frames=33)
+=> Image sees 3459 / 4051 points
+Registering image #107 (num_reg_frames=34)
+=> Image sees 3508 / 4074 points
+Registering image #104 (num_reg_frames=35)
+=> Image sees 3390 / 3987 points
+Registering image #103 (num_reg_frames=36)
+=> Image sees 3362 / 3959 points
+Retriangulation and Global bundle adjustment
+Registering image #102 (num_reg_frames=37)
+=> Image sees 3349 / 3871 points
+Registering image #101 (num_reg_frames=38)
+=> Image sees 3454 / 3938 points
+Registering image #100 (num_reg_frames=39)
+=> Image sees 3444 / 3885 points
+Registering image #99 (num_reg_frames=40)
+=> Image sees 3205 / 3635 points
+Retriangulation and Global bundle adjustment
+Registering image #140 (num_reg_frames=41)
+=> Image sees 2930 / 3488 points
+Registering image #141 (num_reg_frames=42)
+=> Image sees 2856 / 3441 points
+Registering image #98 (num_reg_frames=43)
+=> Image sees 3055 / 3602 points
+Registering image #142 (num_reg_frames=44)
+=> Image sees 2828 / 3451 points
+Registering image #143 (num_reg_frames=45)
+=> Image sees 2837 / 3472 points
+Retriangulation and Global bundle adjustment
+Registering image #144 (num_reg_frames=46)
+=> Image sees 2867 / 3414 points
+Registering image #145 (num_reg_frames=47)
+=> Image sees 2805 / 3354 points
+Registering image #146 (num_reg_frames=48)
+=> Image sees 2701 / 3277 points
+Registering image #147 (num_reg_frames=49)
+=> Image sees 2732 / 3198 points
+Registering image #97 (num_reg_frames=50)
+=> Image sees 2981 / 3569 points
+Retriangulation and Global bundle adjustment
+Registering image #96 (num_reg_frames=51)
+=> Image sees 3024 / 3624 points
+Registering image #95 (num_reg_frames=52)
+=> Image sees 2908 / 3506 points
+Registering image #94 (num_reg_frames=53)
+=> Image sees 2978 / 3550 points
+Registering image #93 (num_reg_frames=54)
+=> Image sees 2999 / 3571 points
+Registering image #92 (num_reg_frames=55)
+=> Image sees 2913 / 3500 points
+Registering image #91 (num_reg_frames=56)
+=> Image sees 2948 / 3476 points
+Retriangulation and Global bundle adjustment
+Registering image #90 (num_reg_frames=57)
+=> Image sees 2770 / 3279 points
+Registering image #89 (num_reg_frames=58)
+=> Image sees 2619 / 3180 points
+Registering image #148 (num_reg_frames=59)
+=> Image sees 2337 / 2917 points
+Registering image #88 (num_reg_frames=60)
+=> Image sees 2508 / 3215 points
+Registering image #87 (num_reg_frames=61)
+=> Image sees 2484 / 3200 points
+Registering image #86 (num_reg_frames=62)
+=> Image sees 2554 / 3211 points
+Retriangulation and Global bundle adjustment
+Registering image #84 (num_reg_frames=63)
+=> Image sees 2570 / 3169 points
+Registering image #85 (num_reg_frames=64)
+=> Image sees 2662 / 3128 points
+Registering image #83 (num_reg_frames=65)
+=> Image sees 2588 / 3114 points
+Registering image #82 (num_reg_frames=66)
+=> Image sees 2592 / 3033 points
+Registering image #81 (num_reg_frames=67)
+=> Image sees 2576 / 3051 points
+Registering image #80 (num_reg_frames=68)
+=> Image sees 2543 / 2997 points
+Registering image #215 (num_reg_frames=69)
+=> Image sees 3076 / 3269 points
+Retriangulation and Global bundle adjustment
+Registering image #79 (num_reg_frames=70)
+=> Image sees 2479 / 2918 points
+Registering image #78 (num_reg_frames=71)
+=> Image sees 2384 / 2755 points
+Registering image #149 (num_reg_frames=72)
+=> Image sees 2191 / 2913 points
+Registering image #150 (num_reg_frames=73)
+=> Image sees 2245 / 2887 points
+Registering image #151 (num_reg_frames=74)
+=> Image sees 2208 / 2749 points
+Registering image #216 (num_reg_frames=75)
+=> Image sees 2844 / 3002 points
+Registering image #152 (num_reg_frames=76)
+=> Image sees 1912 / 2401 points
+Retriangulation and Global bundle adjustment
+Registering image #217 (num_reg_frames=77)
+=> Image sees 2393 / 2530 points
+Registering image #214 (num_reg_frames=78)
+=> Image sees 2723 / 3016 points
+Registering image #213 (num_reg_frames=79)
+=> Image sees 2662 / 3022 points
+Registering image #212 (num_reg_frames=80)
+=> Image sees 2622 / 2844 points
+Registering image #77 (num_reg_frames=81)
+=> Image sees 1899 / 2334 points
+Registering image #153 (num_reg_frames=82)
+=> Image sees 1425 / 2200 points
+Registering image #154 (num_reg_frames=83)
+=> Image sees 1343 / 2216 points
+Registering image #155 (num_reg_frames=84)
+=> Image sees 1491 / 2271 points
+Retriangulation and Global bundle adjustment
+Registering image #156 (num_reg_frames=85)
+=> Image sees 1543 / 2269 points
+Registering image #157 (num_reg_frames=86)
+=> Image sees 1568 / 2340 points
+Registering image #158 (num_reg_frames=87)
+=> Image sees 1659 / 2418 points
+Registering image #159 (num_reg_frames=88)
+=> Image sees 1690 / 2417 points
+Registering image #162 (num_reg_frames=89)
+=> Image sees 1673 / 2420 points
+Registering image #163 (num_reg_frames=90)
+=> Image sees 1777 / 2421 points
+Registering image #164 (num_reg_frames=91)
+=> Image sees 1752 / 2307 points
+Registering image #161 (num_reg_frames=92)
+=> Image sees 1875 / 2410 points
+Registering image #160 (num_reg_frames=93)
+=> Image sees 1950 / 2385 points
+Retriangulation and Global bundle adjustment
+Registering image #165 (num_reg_frames=94)
+=> Image sees 1828 / 2319 points
+Registering image #166 (num_reg_frames=95)
+=> Image sees 1686 / 2103 points
+Registering image #167 (num_reg_frames=96)
+=> Image sees 1550 / 1871 points
+Registering image #76 (num_reg_frames=97)
+=> Image sees 1575 / 2081 points
+Registering image #168 (num_reg_frames=98)
+=> Image sees 1122 / 1490 points
+Registering image #75 (num_reg_frames=99)
+=> Image sees 1337 / 1878 points
+Registering image #169 (num_reg_frames=100)
+=> Image sees 934 / 1461 points
+Registering image #170 (num_reg_frames=101)
+=> Image sees 881 / 1292 points
+Registering image #74 (num_reg_frames=102)
+=> Image sees 1196 / 1820 points
+Registering image #171 (num_reg_frames=103)
+=> Image sees 763 / 1278 points
+Retriangulation and Global bundle adjustment
+Registering image #172 (num_reg_frames=104)
+=> Image sees 715 / 1387 points
+Registering image #173 (num_reg_frames=105)
+=> Image sees 828 / 1504 points
+Registering image #174 (num_reg_frames=106)
+=> Image sees 880 / 1612 points
+Registering image #175 (num_reg_frames=107)
+=> Image sees 976 / 1732 points
+Registering image #176 (num_reg_frames=108)
+=> Image sees 1251 / 1780 points
+Registering image #177 (num_reg_frames=109)
+=> Image sees 1175 / 1734 points
+Registering image #178 (num_reg_frames=110)
+=> Image sees 1165 / 1888 points
+Retriangulation and Global bundle adjustment
+Registering image #179 (num_reg_frames=111)
+=> Image sees 1249 / 2067 points
+Registering image #180 (num_reg_frames=112)
+=> Image sees 1412 / 2089 points
+Registering image #181 (num_reg_frames=113)
+=> Image sees 1404 / 2129 points
+Registering image #182 (num_reg_frames=114)
+=> Image sees 1479 / 2180 points
+Registering image #183 (num_reg_frames=115)
+=> Image sees 1484 / 2097 points
+Registering image #184 (num_reg_frames=116)
+=> Image sees 1264 / 1852 points
+Registering image #185 (num_reg_frames=117)
+=> Image sees 1272 / 2112 points
+Registering image #186 (num_reg_frames=118)
+=> Image sees 1315 / 2432 points
+Retriangulation and Global bundle adjustment
+Registering image #187 (num_reg_frames=119)
+=> Image sees 1504 / 2555 points
+Registering image #188 (num_reg_frames=120)
+=> Image sees 1795 / 2668 points
+Registering image #190 (num_reg_frames=121)
+=> Image sees 1858 / 2790 points
+Registering image #189 (num_reg_frames=122)
+=> Image sees 2084 / 2761 points
+Registering image #191 (num_reg_frames=123)
+=> Image sees 1950 / 2545 points
+Registering image #192 (num_reg_frames=124)
+=> Image sees 1806 / 2607 points
+Registering image #193 (num_reg_frames=125)
+=> Image sees 1898 / 2756 points
+Registering image #194 (num_reg_frames=126)
+=> Image sees 1981 / 2784 points
+Retriangulation and Global bundle adjustment
+Registering image #195 (num_reg_frames=127)
+=> Image sees 1955 / 2673 points
+Registering image #196 (num_reg_frames=128)
+=> Image sees 1908 / 2748 points
+Registering image #197 (num_reg_frames=129)
+=> Image sees 1870 / 2704 points
+Registering image #198 (num_reg_frames=130)
+=> Image sees 1884 / 2717 points
+Registering image #199 (num_reg_frames=131)
+=> Image sees 1807 / 2699 points
+Registering image #200 (num_reg_frames=132)
+=> Image sees 1916 / 2620 points
+Registering image #201 (num_reg_frames=133)
+=> Image sees 1998 / 2592 points
+Registering image #202 (num_reg_frames=134)
+=> Image sees 1932 / 2742 points
+Registering image #203 (num_reg_frames=135)
+=> Image sees 1983 / 2628 points
+Registering image #204 (num_reg_frames=136)
+=> Image sees 1941 / 2583 points
+Retriangulation and Global bundle adjustment
+Registering image #205 (num_reg_frames=137)
+=> Image sees 1825 / 2425 points
+Registering image #206 (num_reg_frames=138)
+=> Image sees 1785 / 2301 points
+Registering image #207 (num_reg_frames=139)
+=> Image sees 1355 / 1538 points
+Registering image #33 (num_reg_frames=140)
+=> Image sees 1290 / 3039 points
+Registering image #36 (num_reg_frames=141)
+=> Image sees 1266 / 3061 points
+Registering image #37 (num_reg_frames=142)
+=> Image sees 1580 / 3168 points
+Registering image #38 (num_reg_frames=143)
+=> Image sees 2242 / 3278 points
+Registering image #39 (num_reg_frames=144)
+=> Image sees 2340 / 3275 points
+Registering image #40 (num_reg_frames=145)
+=> Image sees 2412 / 3228 points
+Retriangulation and Global bundle adjustment
+Registering image #41 (num_reg_frames=146)
+=> Image sees 2499 / 3246 points
+Registering image #42 (num_reg_frames=147)
+=> Image sees 2559 / 3287 points
+Registering image #43 (num_reg_frames=148)
+=> Image sees 2599 / 3210 points
+Registering image #44 (num_reg_frames=149)
+=> Image sees 2615 / 3185 points
+Registering image #35 (num_reg_frames=150)
+=> Image sees 2455 / 2917 points
+Registering image #45 (num_reg_frames=151)
+=> Image sees 2518 / 2938 points
+Registering image #46 (num_reg_frames=152)
+=> Image sees 2345 / 2827 points
+Registering image #47 (num_reg_frames=153)
+=> Image sees 2229 / 2745 points
+Registering image #48 (num_reg_frames=154)
+=> Image sees 2226 / 2683 points
+Registering image #34 (num_reg_frames=155)
+=> Image sees 2416 / 2975 points
+Registering image #32 (num_reg_frames=156)
+=> Image sees 2241 / 2982 points
+Registering image #31 (num_reg_frames=157)
+=> Image sees 2441 / 3099 points
+Registering image #30 (num_reg_frames=158)
+=> Image sees 2346 / 2986 points
+Registering image #29 (num_reg_frames=159)
+=> Image sees 2338 / 3082 points
+Registering image #28 (num_reg_frames=160)
+=> Image sees 2366 / 3295 points
+Retriangulation and Global bundle adjustment
+Registering image #27 (num_reg_frames=161)
+=> Image sees 2487 / 3334 points
+Registering image #26 (num_reg_frames=162)
+=> Image sees 2544 / 3418 points
+Registering image #25 (num_reg_frames=163)
+=> Image sees 2725 / 3452 points
+Registering image #24 (num_reg_frames=164)
+=> Image sees 2755 / 3370 points
+Registering image #23 (num_reg_frames=165)
+=> Image sees 2719 / 3292 points
+Registering image #22 (num_reg_frames=166)
+=> Image sees 2639 / 3231 points
+Registering image #21 (num_reg_frames=167)
+=> Image sees 2690 / 3324 points
+Registering image #20 (num_reg_frames=168)
+=> Image sees 2719 / 3381 points
+Registering image #19 (num_reg_frames=169)
+=> Image sees 2795 / 3386 points
+Registering image #18 (num_reg_frames=170)
+=> Image sees 2735 / 3370 points
+Registering image #17 (num_reg_frames=171)
+=> Image sees 2745 / 3342 points
+Registering image #16 (num_reg_frames=172)
+=> Image sees 2752 / 3442 points
+Registering image #8 (num_reg_frames=173)
+=> Image sees 2699 / 3444 points
+Registering image #12 (num_reg_frames=174)
+=> Image sees 2861 / 3449 points
+Registering image #11 (num_reg_frames=175)
+=> Image sees 2951 / 3488 points
+Registering image #10 (num_reg_frames=176)
+=> Image sees 2822 / 3435 points
+Registering image #6 (num_reg_frames=177)
+=> Image sees 2884 / 3467 points
+Retriangulation and Global bundle adjustment
+Registering image #14 (num_reg_frames=178)
+=> Image sees 3002 / 3471 points
+Registering image #2 (num_reg_frames=179)
+=> Image sees 2852 / 3421 points
+Registering image #1 (num_reg_frames=180)
+=> Image sees 2953 / 3425 points
+Registering image #5 (num_reg_frames=181)
+=> Image sees 2982 / 3464 points
+Registering image #3 (num_reg_frames=182)
+=> Image sees 2935 / 3375 points
+Registering image #7 (num_reg_frames=183)
+=> Image sees 2998 / 3397 points
+Registering image #13 (num_reg_frames=184)
+=> Image sees 3105 / 3453 points
+Registering image #4 (num_reg_frames=185)
+=> Image sees 3031 / 3395 points
+Registering image #9 (num_reg_frames=186)
+=> Image sees 2948 / 3353 points
+Registering image #15 (num_reg_frames=187)
+=> Image sees 3022 / 3343 points
+Registering image #49 (num_reg_frames=188)
+=> Image sees 2193 / 2663 points
+Registering image #50 (num_reg_frames=189)
+=> Image sees 2191 / 2684 points
+Registering image #51 (num_reg_frames=190)
+=> Image sees 2108 / 2647 points
+Registering image #52 (num_reg_frames=191)
+=> Image sees 2236 / 2799 points
+Registering image #53 (num_reg_frames=192)
+=> Image sees 2253 / 2798 points
+Registering image #54 (num_reg_frames=193)
+=> Image sees 2247 / 2675 points
+Registering image #55 (num_reg_frames=194)
+=> Image sees 2122 / 2478 points
+Registering image #56 (num_reg_frames=195)
+=> Image sees 1906 / 2387 points
+Retriangulation and Global bundle adjustment
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+W: Linear solver failure. Failed to compute a step: CHOLMOD warning: Matrix not positive definite.
+Registering image #57 (num_reg_frames=196)
+=> Image sees 1761 / 2315 points
+Registering image #58 (num_reg_frames=197)
+=> Image sees 1818 / 2374 points
+Registering image #59 (num_reg_frames=198)
+=> Image sees 1887 / 2426 points
+Registering image #60 (num_reg_frames=199)
+=> Image sees 1846 / 2396 points
+Registering image #62 (num_reg_frames=200)
+=> Image sees 1846 / 2499 points
+Registering image #63 (num_reg_frames=201)
+=> Image sees 2020 / 2493 points
+Registering image #61 (num_reg_frames=202)
+=> Image sees 2080 / 2478 points
+Registering image #64 (num_reg_frames=203)
+=> Image sees 1887 / 2174 points
+Registering image #65 (num_reg_frames=204)
+=> Image sees 1597 / 1946 points
+Registering image #66 (num_reg_frames=205)
+=> Image sees 1487 / 1870 points
+Registering image #67 (num_reg_frames=206)
+=> Image sees 1337 / 1601 points
+Registering image #220 (num_reg_frames=207)
+=> Image sees 1894 / 2029 points
+Registering image #219 (num_reg_frames=208)
+=> Image sees 1766 / 1900 points
+Registering image #68 (num_reg_frames=209)
+=> Image sees 922 / 1151 points
+Registering image #211 (num_reg_frames=210)
+=> Image sees 1819 / 1911 points
+Registering image #73 (num_reg_frames=211)
+=> Image sees 897 / 1349 points
+Registering image #218 (num_reg_frames=212)
+=> Image sees 1155 / 1504 points
+Registering image #72 (num_reg_frames=213)
+=> Image sees 720 / 1101 points
+Registering image #69 (num_reg_frames=214)
+=> Image sees 624 / 864 points
+Registering image #71 (num_reg_frames=215)
+=> Image sees 601 / 968 points
+Retriangulation and Global bundle adjustment
+Registering image #70 (num_reg_frames=216)
+=> Image sees 712 / 955 points
+Registering image #208 (num_reg_frames=217)
+=> Image sees 912 / 1009 points
+Registering image #209 (num_reg_frames=218)
+=> Image sees 456 / 530 points
+Registering image #210 (num_reg_frames=219)
+=> Image sees 518 / 564 points
+Retriangulation and Global bundle adjustment
+Retriangulation and Global bundle adjustment
+Keeping successful reconstruction
+Elapsed time: 11.901 [minutes]

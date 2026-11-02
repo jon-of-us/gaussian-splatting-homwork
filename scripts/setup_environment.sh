@@ -19,7 +19,7 @@ mkdir -p "$TMPDIR" "$PIP_CACHE_DIR" "$TORCH_EXTENSIONS_DIR"
 
 cd "${assignment_root}/submodules/diff-gaussian-rasterization"
 "$python_executable" setup.py clean --all
-"$python_executable" -m pip install --no-build-isolation --no-deps --force-reinstall .
+"$python_executable" -m pip install --verbose --no-build-isolation --no-deps --force-reinstall .
 cd "$assignment_root"
 "$python_executable" - <<'PY'
 import diff_gaussian_rasterization as rasterizer

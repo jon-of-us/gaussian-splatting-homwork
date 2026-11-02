@@ -5,3 +5,7 @@ __pycache__/
 .venv/
 renders/
 .build_tmp/
+assets/fruit-images/
+assets/fruit-database.db
+assets/fruit-database.db-shm
+assets/fruit-database.db-wal

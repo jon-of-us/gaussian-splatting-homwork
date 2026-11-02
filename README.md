@@ -79,7 +79,7 @@ Run the following steps from the assignment root:
 
    These commands build and install the extension in the active environment. Rebuild it after changing its CUDA source, PyTorch installation or toolchain. Compatibility must be checked in your environment; not every platform combination has been tested.
 
-   Adjust compilation parallelism to available memory with `MAX_JOBS`, for example `export MAX_JOBS=4` in Bash or `$env:MAX_JOBS=4` in PowerShell. The Bash helper defaults to four jobs.
+   Adjust compilation parallelism to available memory with `MAX_JOBS`, for example `export MAX_JOBS=4` in Bash or `$env:MAX_JOBS=4` in PowerShell. The Bash helper defaults to four jobs and prints verbose compiler output to help diagnose build failures.
 
 **Quick check (coding, 5 pts):**
 
@@ -188,11 +188,13 @@ The ten required items total **100 points**, with **20 additional bonus points**
 
 ## 4. About submission
 
+
 - **What to submit:** Your **code** and your own **written report**, packed as a `.zip`. The report must contain the requested written derivations, baseline image, reconstruction observations, point cloud screenshot and rendering/pruning comparisons. Include your bonus method and evaluation if attempted.
 - **Where to submit:** **Web Learning**.
 - **Deadline:** **Nov 5, 2026, 23:59 Beijing time, UTC+08:00**.
 
 ---
+
 
 ## References
 
