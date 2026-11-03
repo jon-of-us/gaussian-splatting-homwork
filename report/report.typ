@@ -63,3 +63,82 @@ The COLMAP viewer shows the registered camera poses around the reconstructed sce
   image("images/meshlab-screenshot.png", width: 75%),
   caption: [The provided `points3D.ply` point cloud viewed in MeshLab (35,674 vertices).],
 )
+
+= Task 2: Building Gaussian primitives
+
+== Covariance from scale and rotation
+
+Let the activated scales be standard deviations along a Gaussian's local principal axes, and let $R$ be the rotation represented by its normalized quaternion. The diagonal scale matrix is
+
+$
+D = mat(s_x, 0, 0; 0, s_y, 0; 0, 0, s_z).
+$
+
+The linear map from a unit isotropic Gaussian to this oriented Gaussian is $L = R D$. Covariance transforms by multiplying the map by its transpose:
+
+$
+Sigma = L L^T = R D D^T R^T
+       = R mat(s_x^2, 0, 0; 0, s_y^2, 0; 0, 0, s_z^2) R^T.
+$
+
+In `get_covariance`, the stored log-scales are exponentiated by `get_scaling`, the quaternion is normalized and converted to $R$, and `scaling_modifier` multiplies each scale before forming $L$. The returned six values are the unique entries of the symmetric covariance matrix.
+
+== Viewing transformation
+
+Write the affine world-to-camera transform as
+
+$
+T_v = mat(R_v, t_v; 0, 1),
+$
+
+where $R_v$ is its $3 times 3$ linear part and $t_v$ is its translation. For a world-space Gaussian with mean $mu$ and covariance $Sigma$, the camera-space mean and covariance are
+
+$
+mu_c = R_v mu + t_v, quad Sigma_c = R_v Sigma R_v^T.
+$
+
+Translation changes the mean but not the covariance. In homogeneous coordinates a point has final component $1$; a direction has final component $0$.
+
+== Local projection and screen-space covariance
+
+For camera-space coordinates $(x, y, z)$ and focal lengths $f_x, f_y$ in pixels, perspective projection (omitting the principal-point offset, which has zero derivative) is
+
+$
+u = f_x x / z, quad v = f_y y / z.
+$
+
+Linearizing this nonlinear map at the camera-space mean gives the Jacobian
+
+$
+J_p = mat(
+  f_x/z, 0, -f_x x/z^2;
+  0, f_y/z, -f_y y/z^2
+).
+$
+
+The first-order projected Gaussian has mean equal to the projection of $mu_c$ and covariance
+
+$
+Sigma_(2D) = J_p Sigma_c J_p^T.
+$
+
+Equivalently, with $A = J_p R_v$, $Sigma_(2D) = A Sigma A^T$. This order first changes the covariance from world to camera coordinates and then applies the projection Jacobian. `computeCov2D` implements this propagation using the repository's column-major GLM convention: it embeds the transposed Jacobian in a $3 times 3$ matrix, combines it with the reconstructed view rotation, and returns the symmetric upper-left $2 times 2$ block. The code adds $0.3$ to both diagonal entries as an isotropic screen-space low-pass filter, so the returned diagonal values are in pixel-squared units.
+
+== Square enclosing the 99% joint confidence region
+
+For a two-dimensional Gaussian, the squared Mahalanobis distance follows a chi-squared distribution with two degrees of freedom. Thus the 99% confidence ellipse is
+
+$
+(p - mu_(2D))^T Sigma_(2D)^(-1) (p - mu_(2D)) <= q,
+quad q = chi^2_(2, 0.99) = -2 ln(0.01) approx 9.21034.
+$
+
+Writing the diagonal entries of $Sigma_(2D)$ as $sigma_(u u)$ and $sigma_(v v)$, the ellipse's greatest absolute extent along screen axis $u$ is $sqrt(q sigma_(u u))$, and along $v$ it is $sqrt(q sigma_(v v))$. Therefore, the smallest axis-aligned square centered at the mean that contains the entire ellipse has side length
+
+$
+ell = 2 sqrt(q max(sigma_(u u), sigma_(v v))).
+$
+
+This square contains the 99% joint ellipse, so its probability coverage can exceed 99%. The largest covariance eigenvalue would instead bound the ellipse's radius in every direction and can make this axis-aligned square unnecessarily large; a 1D normal quantile or independent marginal-coverage argument does not in general describe the joint 99% region.
+
+The CUDA extension has not yet been rebuilt and the post-change renders have not been inspected: this local macOS environment has no NVIDIA GPU or CUDA compiler. Run the rebuild commands from the assignment instructions and `python render.py` in the CUDA-enabled Colab environment before submission.

@@ -67,15 +67,12 @@ class GaussianModel:
         return self.opacity_activation(self._opacity)
     
     def get_covariance(self, scaling_modifier = 1):
-        s= self.get_scaling # scaling vector
-        q= self.get_rotation # rotation quaternion
+        s = self.get_scaling
+        q = self.get_rotation
         ## Begin code 2.1 ##
-        # TODO: build 3dgs covariance matrix. Equation (6) of 3dgs paper.
-        # R = ???(q)
-        # S = torch.diag_embed(???)
-        # L = ???
-        
-        L=torch.eye(3, dtype=self._xyz.dtype, device=self._xyz.device).unsqueeze(0).repeat(self._xyz.shape[0],1,1) # placeholder, please remove this line
+        R = build_rotmat_from_quat(q)
+        S = torch.diag_embed(s * scaling_modifier)
+        L = R @ S
         ## End code 2.1 ##
         
         actual_covariance = L @ L.transpose(1, 2)
