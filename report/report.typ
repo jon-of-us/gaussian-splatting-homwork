@@ -141,4 +141,9 @@ $
 
 This square contains the 99% joint ellipse, so its probability coverage can exceed 99%. The largest covariance eigenvalue would instead bound the ellipse's radius in every direction and can make this axis-aligned square unnecessarily large; a 1D normal quantile or independent marginal-coverage argument does not in general describe the joint 99% region.
 
-The CUDA extension has not yet been rebuilt and the post-change renders have not been inspected: this local macOS environment has no NVIDIA GPU or CUDA compiler. Run the rebuild commands from the assignment instructions and `python render.py` in the CUDA-enabled Colab environment before submission.
+== Rendered result
+
+#figure(
+  image("images/task2-render.png", width: 65%),
+  caption: [Representative view rendered after implementing the Task 2 covariance calculations.],
+)

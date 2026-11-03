@@ -14,22 +14,25 @@ def eval_sh(deg, sh, dirs):
     Supports torch and NumPy coefficient arrays.
     ... Can be 0 or more batch dimensions.
     Args:
-        deg: int SH degree. Degree 0 is provided; degree 1 is TODO.
+        deg: int SH degree. Supports degrees 0 and 1.
         sh: array SH coeffs [..., C, (deg + 1) ** 2]
         dirs: array unit directions [..., 3]
     Returns:
         [..., C]
     """
+
     assert deg in (0, 1), "This assignment uses only SH degrees 0 and 1"
     coeff = (deg + 1) ** 2
     assert sh.shape[-1] >= coeff
-
     result = SH_C0_0 * sh[..., 0]
     
-    if deg ==1:
+    if deg == 1:
         # Begin code 3.1 ##
-        # TODO: add support for 1st-degree SH 
-        # result = result + SH_C1_0 * ??? + SH_C1_1 * ??? + SH_C1_2 * ???
-        pass
+        result = (
+            result
+            + SH_C1_0 * dirs[..., 1:2] * sh[..., 1]
+            + SH_C1_1 * dirs[..., 2:3] * sh[..., 2]
+            + SH_C1_2 * dirs[..., 0:1] * sh[..., 3]
+        )
         # End code 3.1 ##
     return result

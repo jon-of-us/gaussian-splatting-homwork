@@ -123,9 +123,9 @@ class GaussianModel:
 
     def prune_points(self,min_opacity=0.0):
         ## Begin code 3.2 ##
-        # TODO: compute a mask of points with opacity < min_opacity, and remove them from the model.
-        # valid_points_mask = ???
-        valid_points_mask=torch.arange(self._xyz.shape[0], device=self._xyz.device) # placeholder, remove this line
+        if not 0.0 <= min_opacity <= 1.0:
+            raise ValueError(f"min_opacity must be between 0 and 1, got {min_opacity}")
+        valid_points_mask = self.get_opacity.squeeze(-1) >= min_opacity
         ## End code 3.2 ##
         
         self._xyz = self._xyz[valid_points_mask]

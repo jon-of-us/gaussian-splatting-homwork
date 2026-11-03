@@ -128,10 +128,17 @@ def render_sets(args):
         gaussians.load_ply(args.model_path)
         
         ### Begin Code 3.2 ###
-        print("Number of gaussians before pruning: ", gaussians.get_xyz.shape[0])
-        # TODO: call your pruning implementation and compare thresholds.
-        # gaussians.prune_points(...)
-        print("Number of gaussians after pruning: ", gaussians.get_xyz.shape[0])
+        points_before = gaussians.get_xyz.shape[0]
+        gaussians.prune_points(args.min_opacity)
+        points_after = gaussians.get_xyz.shape[0]
+        if points_after == 0:
+            raise ValueError(
+                f"Opacity threshold {args.min_opacity} removed all Gaussians."
+            )
+        pruning_ratio = 1.0 - points_after / points_before
+        print(f"Number of Gaussians before pruning: {points_before}")
+        print(f"Number of Gaussians after pruning: {points_after}")
+        print(f"Pruning ratio at opacity threshold {args.min_opacity}: {pruning_ratio:.2%}")
         ### End code 3.2 ###
         
         bg_color = [0, 0, 0] # Black background for our scene
@@ -148,5 +155,6 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="Testing script parameters")
     parser.add_argument("--model_path","-m", default="assets/gs_cloud.ply",type=str)
     parser.add_argument("--sh_degree", default=1, type=int, help="active SH degree")
+    parser.add_argument("--min_opacity", default=0.0, type=float, help="prune Gaussians below this opacity")
     args=parser.parse_args()
     render_sets(args)
