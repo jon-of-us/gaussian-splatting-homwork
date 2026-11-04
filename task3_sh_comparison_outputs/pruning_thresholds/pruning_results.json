@@ -1,0 +1,55 @@
+{
+  "sh_degree": 1,
+  "camera_count": 5,
+  "timing_scope": "Wall-clock render.py process duration, including startup, model loading, pruning, rendering, and writing all five PNGs.",
+  "thresholds": [
+    {
+      "threshold": 0.0,
+      "initial_count": 257882,
+      "remaining_count": 257882,
+      "pruned_count": 0,
+      "pruning_fraction": 0.0,
+      "render_time_seconds": 6.469624341000099
+    },
+    {
+      "threshold": 0.005,
+      "initial_count": 257882,
+      "remaining_count": 234017,
+      "pruned_count": 23865,
+      "pruning_fraction": 0.09254232555975217,
+      "render_time_seconds": 5.747202797
+    },
+    {
+      "threshold": 0.01,
+      "initial_count": 257882,
+      "remaining_count": 227683,
+      "pruned_count": 30199,
+      "pruning_fraction": 0.1171039467663505,
+      "render_time_seconds": 6.285558938000122
+    },
+    {
+      "threshold": 0.02,
+      "initial_count": 257882,
+      "remaining_count": 216650,
+      "pruned_count": 41232,
+      "pruning_fraction": 0.15988708013742714,
+      "render_time_seconds": 5.667267479999964
+    },
+    {
+      "threshold": 0.05,
+      "initial_count": 257882,
+      "remaining_count": 193921,
+      "pruned_count": 63961,
+      "pruning_fraction": 0.24802429017922922,
+      "render_time_seconds": 6.510297331000174
+    },
+    {
+      "threshold": 0.1,
+      "initial_count": 257882,
+      "remaining_count": 169657,
+      "pruned_count": 88225,
+      "pruning_fraction": 0.34211383500981074,
+      "render_time_seconds": 5.6368051640001795
+    }
+  ]
+}

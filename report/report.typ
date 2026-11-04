@@ -9,22 +9,12 @@ Franz Jonas Ullmann \ 林阳 \ 2026400694
 
 == Environment and result
 
-The notebook #link("task0_colab.ipynb")[task0_colab.ipynb] ran through VS Code using a Google Colab GPU runtime. The recorded environment was:
+The assignment was completed using Google Colab with a GPU runtime.
 
-- GPU: Tesla T4.
-- Python: 3.13.16.
-- PyTorch: 2.11.0+cu130; torchvision: 0.26.0+cu130.
-- PyTorch CUDA and CUDA Toolkit: 13.0; Toolkit path: `/usr/local/cuda`.
+The main errors encountered were:
 
-The GPU and runtime interoperability checks passed. After the build issue described below was fixed, the CUDA rasterizer built and imported successfully. The starter implementation rendered five camera views, which the notebook preserved separately from `renders/`. These are baseline results from the unfinished implementation, not evidence that the later TODOs are complete.
-
-== What did not work
-
-The connection to the Colab GPU was working, but the rasterizer extension initially failed to compile. The CUDA compiler reported that `std::uintptr_t`, `uint32_t`, and `uint64_t` were undefined in `rasterizer_impl.h`. The initial pip output only reported a failed wheel build and "No available output", so it did not reveal the underlying compiler error. A verbose rebuild exposed the missing integer type declarations.
-
-Adding the standard headers `<cstddef>`, `<cstdint>`, and `<stdint.h>` to the rasterizer header resolved the observed build errors. The notebook includes a cell that applies the fix to the temporary Colab checkout; a subsequent build and render succeeded. The build output is now streamed and pip is run verbosely to make future compiler errors visible.
-
-Colab clones or pulls the GitHub repository rather than using uncommitted local files. Therefore local changes must be committed and pushed before a fresh runtime can pick them up. The header repair cell modifies the temporary checkout, so a fresh runtime should be started after pushing the permanent fix instead of pulling over that modification.
+- `std::uintptr_t` was undeclared in `rasterizer_impl.h` → CUDA rasterizer compilation failed.
+- `uint32_t` and `uint64_t` were undeclared in `rasterizer_impl.h` → CUDA rasterizer compilation failed.
 
 == Baseline artifact
 
@@ -42,13 +32,14 @@ The notebook packages the five views and environment details as `task0_artifacts
 I ran the fruit images through COLMAP. Feature extraction processed all 220 images (220/220), with no images skipped at that stage. The reconstruction pipeline shown in the log had these stages:
 
 1. *Feature extraction:* COLMAP detected SIFT features in each image (about 3,200--3,900 per image).
-2. *Feature matching and geometric verification:* COLMAP matched features between images and filtered matches that were inconsistent with the estimated geometry.
-3. *Incremental mapping:* COLMAP initialized a reconstruction and registered images successively, triangulating 3D points from the verified matches.
-4. *Retriangulation and global bundle adjustment:* COLMAP refined the points, camera poses, and camera parameters as more images were registered.
+2. *Feature matching and geometric verification:* COLMAP matched features between images and removes matches that are inconsistent with the estimated geometry. #text(fill: blue)[0.27 minutes]
+3. *Incremental mapping:* COLMAP initialized a reconstruction and registered images successively, triangulating 3D points from the verified matches. #text(fill: blue)[11.90 minutes]
+4. *Retriangulation and global bundle adjustment:* COLMAP refined the points, camera poses, and camera parameters as more images were registered. #text(fill: blue)[3.94 minutes]
 
-The mapper registered 219 images. It emitted several linear-solver warnings during optimization, but finished by keeping a successful reconstruction. The log reports about 0.27 minutes for feature extraction, 3.94 minutes for feature matching and geometric verification, and 11.90 minutes for mapping.
+ It showed linear-solver warnings during optimization, but finished by keeping a successful reconstruction. 
+//  The log reports about 0.27 minutes for feature extraction, 3.94 minutes for feature matching and geometric verification, and 11.90 minutes for mapping.
 
-For camera initialization, I selected *Parameters from EXIF* in the GUI. The log nevertheless assigns a different `SIMPLE_RADIAL` camera ID to each image, including images 001 and 002, which have the same 1399 x 1439 resolution. Their reported focal length is 1726.80 pixels, consistent with COLMAP's default initialization for that image size rather than a shared camera calibration. I kept this reconstruction because the camera groups are unknown; consequently, its camera models were not shared across images.
+For camera initialization, I selected _Parameters from EXIF_ in the GUI. The log nevertheless assigns a different `SIMPLE_RADIAL` camera ID to each image Their reported focal length is 1726.80 pixels, consistent with COLMAP's default initialization for that image size rather than a shared camera calibration. I kept this reconstruction because the camera groups are unknown; consequently, its camera models were not shared across images.
 
 == 3D point-cloud visualization
 
@@ -147,3 +138,62 @@ This square contains the 99% joint ellipse, so its probability coverage can exce
   image("images/task2-render.png", width: 65%),
   caption: [Representative view rendered after implementing the Task 2 covariance calculations.],
 )
+
+= Task 3: Spherical-harmonic degree and opacity pruning
+
+== Experimental setup
+
+I ran the comparison notebook on a Google Colab Tesla T4 GPU with Python 3.13.16, PyTorch 2.11.0+cu130, and CUDA 13.0. Each SH setting rendered all five evaluation cameras. Image error was measured against the supplied ground-truth views using RGB mean absolute error (MAE) and peak signal-to-noise ratio (PSNR). Three alternating-order runs were used for each SH degree; the reported render time is the median wall-clock time for the complete five-view `render.py` process.
+
+== SH degree comparison
+
+Degree 1 improved both image metrics on every camera. Averaged over the five views, MAE decreased from 0.02327 to 0.01849 (20.6% lower), while PSNR increased from 29.17 dB to 31.56 dB. The quality improvement came with a modest timing increase: median time rose from 5.92 s for degree 0 to 6.31 s for degree 1 (6.6%).
+
+#table(
+  columns: 4,
+  table.header([SH degree], [Mean MAE], [Mean PSNR], [Median five-view time]),
+  [0], [0.02327], [29.17 dB], [5.92 s],
+  [1], [0.01849], [31.56 dB], [6.31 s],
+)
+
+#figure(
+  image("images/task3_sh_comparison/view_comparison.png", width: 100%),
+  caption: [Ground truth and rendered views for SH degrees 0 and 1, across the five evaluation cameras.],
+)
+
+#figure(
+  image("images/task3_sh_comparison/image_metrics.png", width: 95%),
+  caption: [Per-camera MAE and PSNR; degree 1 improves both metrics for all five views.],
+)
+
+#figure(
+  image("images/task3_sh_comparison/render_times.png", width: 80%),
+  caption: [Five-view render wall time over three trials; bars show medians and points show individual runs.],
+)
+
+== Opacity-based post-hoc pruning
+
+I pruned the degree-1 model without retraining, using six minimum-opacity thresholds. The initial model contained 257,882 Gaussians. The most aggressive tested threshold, 0.10, removed 88,225 Gaussians (34.2%); the five-view contact sheet remained broadly similar to the unpruned output, although small details may be affected.
+
+#table(
+  columns: 4,
+  table.header([Opacity threshold], [Gaussians pruned], [Pruned fraction], [Five-view time]),
+  [0.000], [0], [0.0%], [6.47 s],
+  [0.005], [23,865], [9.3%], [5.75 s],
+  [0.010], [30,199], [11.7%], [6.29 s],
+  [0.020], [41,232], [16.0%], [5.67 s],
+  [0.050], [63,961], [24.8%], [6.51 s],
+  [0.100], [88,225], [34.2%], [5.64 s],
+)
+
+#figure(
+  image("images/task3_sh_comparison/pruning_fractions.png", width: 90%),
+  caption: [Fraction of the original Gaussians removed at each opacity threshold.],
+)
+
+#figure(
+  image("images/task3_sh_comparison/threshold_0.100.png", width: 100%),
+  caption: [Unpruned baseline (top) and degree-1 render after pruning at opacity threshold 0.10 (bottom), across all five cameras.],
+)
+
+The pruning timings are single runs and are not monotonic with threshold. They include process startup, model loading, pruning, rendering, and writing all five images, so the observed times do not establish a reliable speedup from pruning. The threshold sweep instead shows the trade-off between the number of removed Gaussians and the visual quality of the rendered views.
