@@ -24,14 +24,9 @@ def translucent_mask(opacity, max_opacity):
     return opacity <= max_opacity
 
 
-def luminance(image_hwc):
-    return image_hwc.mean(dim=-1)
-
-
-def flagged_pixel_mask(render_hwc, reference_hwc, dark_threshold, excess_threshold):
-    reference_luma = luminance(reference_hwc)
-    excess = luminance(render_hwc) - reference_luma
-    return (reference_luma <= dark_threshold) & (excess >= excess_threshold)
+def flagged_pixel_mask(render_hwc, reference_hwc, diff_threshold):
+    largest_channel_difference = (render_hwc - reference_hwc).abs().max(dim=-1).values
+    return largest_channel_difference >= diff_threshold
 
 
 def dilate_mask(mask_hw, radius_px):
@@ -161,10 +156,10 @@ def lowest_opacity_indices(opacity, count):
     return torch.argsort(opacity)[:count]
 
 
-def image_metrics(render_hwc, reference_hwc, dark_threshold, excess_threshold):
+def image_metrics(render_hwc, reference_hwc, diff_threshold):
     difference = render_hwc - reference_hwc
     mse = float(difference.square().mean())
-    flagged = flagged_pixel_mask(render_hwc, reference_hwc, dark_threshold, excess_threshold)
+    flagged = flagged_pixel_mask(render_hwc, reference_hwc, diff_threshold)
     return {
         'mae': float(difference.abs().mean()),
         'psnr_db': float('inf') if mse == 0 else 10.0 * math.log10(1.0 / mse),
