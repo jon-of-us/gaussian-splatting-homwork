@@ -113,7 +113,7 @@ $
 Sigma_(2D) = J_p Sigma_c J_p^T.
 $
 
-Equivalently, with $A = J_p R_v$, $Sigma_(2D) = A Sigma A^T$. This order first changes the covariance from world to camera coordinates and then applies the projection Jacobian. `computeCov2D` implements this propagation using the repository's column-major GLM convention: it embeds the transposed Jacobian in a $3 times 3$ matrix, combines it with the reconstructed view rotation, and returns the symmetric upper-left $2 times 2$ block. The code adds $0.3$ to both diagonal entries as an isotropic screen-space low-pass filter, so the returned diagonal values are in pixel-squared units.
+Equivalently, with $A = J_p R_v$, $Sigma_(2D) = A Sigma A^T$. This order first transforms the covariance from world to camera coordinates and then applies the projection Jacobian.
 
 == Square enclosing the 99% joint confidence region
 
@@ -124,13 +124,13 @@ $
 quad q = chi^2_(2, 0.99) = -2 ln(0.01) approx 9.21034.
 $
 
-Writing the diagonal entries of $Sigma_(2D)$ as $sigma_(u u)$ and $sigma_(v v)$, the ellipse's greatest absolute extent along screen axis $u$ is $sqrt(q sigma_(u u))$, and along $v$ it is $sqrt(q sigma_(v v))$. Therefore, the smallest axis-aligned square centered at the mean that contains the entire ellipse has side length
+Let $Sigma_(u u)$ and $Sigma_(v v)$ be the diagonal entries of $Sigma_(2D)$. The ellipse's maximum absolute extent along each screen axis is $sqrt(q Sigma_(u u))$ and $sqrt(q Sigma_(v v))$, respectively. Therefore, the smallest axis-aligned square centered at the mean that contains the ellipse has side length
 
 $
-ell = 2 sqrt(q max(sigma_(u u), sigma_(v v))).
+ell = 2 sqrt(q max(Sigma_(u u), Sigma_(v v))).
 $
 
-This square contains the 99% joint ellipse, so its probability coverage can exceed 99%. The largest covariance eigenvalue would instead bound the ellipse's radius in every direction and can make this axis-aligned square unnecessarily large; a 1D normal quantile or independent marginal-coverage argument does not in general describe the joint 99% region.
+This square contains the entire 99% joint confidence region, so its probability coverage is at least 99% and may be greater.
 
 == Rendered result
 
@@ -156,10 +156,7 @@ Degree 1 improved both image metrics on every camera. Averaged over the five vie
   [1], [0.01849], [31.56 dB], [6.31 s],
 )
 
-#figure(
-  image("images/task3_sh_comparison/view_comparison.png", width: 100%),
-  caption: [Ground truth and rendered views for SH degrees 0 and 1, across the five evaluation cameras.],
-)
+
 
 #figure(
   image("images/task3_sh_comparison/image_metrics.png", width: 95%),
@@ -170,6 +167,27 @@ Degree 1 improved both image metrics on every camera. Averaged over the five vie
   image("images/task3_sh_comparison/render_times.png", width: 80%),
   caption: [Five-view render wall time over three trials; bars show medians and points show individual runs.],
 )
+
+#figure(
+  grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    [
+      *SH degree 0*
+      #image("images/task3_sh_comparison/view_comparison_zoom_sh0.png", width: 80%)
+    ],
+    [
+      *SH degree 1*
+      #image("images/task3_sh_comparison/view_comparison_zoom_sh1.png", width: 80%)
+    ],
+  ),
+  caption: [There are some artefacts where the Gaussian splits are not generated perfectly. In these areas, the improvement by order one's spherical harmonics is most Prominent. (At the orange and the straw.),]
+)
+#figure(
+  image("images/task3_sh_comparison/view_comparison.png", width: 95%),
+  caption: [Ground truth and rendered views for SH degrees 0 and 1, across the five evaluation cameras. ],
+)
+
 
 == Opacity-based post-hoc pruning
 
