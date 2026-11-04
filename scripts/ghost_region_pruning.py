@@ -6,22 +6,24 @@ Gaussian tensors stay on the device of the source model.
 
 import math
 import numpy as np
+import scipy.sparse as scipy_sparse
+import scipy.sparse.csgraph as scipy_csgraph
+import scipy.spatial as scipy_spatial
 import torch
 import torch.nn as nn
 import gaussian_model
 
 NEAR_PLANE_DEPTH = 0.2
-NEIGHBOR_OFFSETS = [
-    (dx, dy, dz)
-    for dx in (-1, 0, 1)
-    for dy in (-1, 0, 1)
-    for dz in (-1, 0, 1)
-    if (dx, dy, dz) != (0, 0, 0)
-]
+SH_C0 = 0.28209479177387814
 
 
 def translucent_mask(opacity, max_opacity):
     return opacity <= max_opacity
+
+
+def base_colors(model):
+    """RGB in [0, 1] from each Gaussian's DC spherical-harmonic term (view-independent part of the color)."""
+    return (model.get_features[:, 0, :] * SH_C0 + 0.5).clamp(0.0, 1.0)
 
 
 def flagged_pixel_mask(render_hwc, reference_hwc, diff_threshold):
@@ -64,55 +66,54 @@ def evidence_mask(pixels_xy, inside, flagged_hw):
     return flagged_hw[rows, columns] & inside
 
 
-def build_voxel_clusters(xyz_np, candidate_mask_np, evidence_np, voxel_size):
-    """Group candidate Gaussians into 26-connected clusters of occupied voxels.
+def build_feature_clusters(xyz_np, rgb_np, opacity_np, candidate_mask_np, evidence_np,
+                           radius, color_tolerance, opacity_tolerance):
+    """Group translucent Gaussians that are close in position, color, and opacity.
 
-    xyz_np: (N, 3) centers; candidate_mask_np: (N,) translucent Gaussians;
-    evidence_np: (V, N) bool, Gaussian center falls in a flagged region of view v.
-    Only voxels containing at least one evidence Gaussian seed clusters; every
-    candidate Gaussian in a seeded voxel joins that voxel's cluster.
+    xyz_np (N, 3), rgb_np (N, 3), opacity_np (N,): per-Gaussian attributes.
+    candidate_mask_np (N,): translucent Gaussians. evidence_np (V, N) bool: the
+    center falls in a flagged region of view v.
+    Two candidates link when their centers are within `radius`, every RGB channel
+    differs by at most `color_tolerance`, and their opacities differ by at most
+    `opacity_tolerance`. A cluster is a connected component of that graph that
+    contains at least one Gaussian with evidence. Returns (clusters, stats).
     """
     candidate_indices = np.flatnonzero(candidate_mask_np)
+    candidate_count = int(candidate_indices.size)
     candidate_xyz = xyz_np[candidate_indices]
-    origin = candidate_xyz.min(axis=0)
-    voxel_coords = np.floor((candidate_xyz - origin) / voxel_size).astype(np.int64)
-    unique_voxels, voxel_of_candidate = np.unique(voxel_coords, axis=0, return_inverse=True)
-    voxel_of_candidate = voxel_of_candidate.reshape(-1)
+    candidate_rgb = rgb_np[candidate_indices]
+    candidate_opacity = opacity_np[candidate_indices]
+
+    pairs = scipy_spatial.cKDTree(candidate_xyz).query_pairs(r=radius, output_type='ndarray')
+    pairs_within_radius = len(pairs)
+    color_gap = np.abs(candidate_rgb[pairs[:, 0]] - candidate_rgb[pairs[:, 1]]).max(axis=1)
+    pairs = pairs[color_gap <= color_tolerance]
+    pairs_within_color = len(pairs)
+    opacity_gap = np.abs(candidate_opacity[pairs[:, 0]] - candidate_opacity[pairs[:, 1]])
+    pairs = pairs[opacity_gap <= opacity_tolerance]
+    pairs_within_opacity = len(pairs)
+
+    linked = scipy_sparse.coo_matrix(
+        (np.ones(pairs_within_opacity, dtype=np.int8), (pairs[:, 0], pairs[:, 1])),
+        shape=(candidate_count, candidate_count),
+    )
+    component_count, labels = scipy_csgraph.connected_components(linked, directed=False)
 
     evidence_per_candidate = evidence_np[:, candidate_indices].any(axis=0)
-    voxel_has_evidence = np.zeros(len(unique_voxels), dtype=bool)
-    np.logical_or.at(voxel_has_evidence, voxel_of_candidate, evidence_per_candidate)
+    component_has_evidence = np.zeros(component_count, dtype=bool)
+    np.logical_or.at(component_has_evidence, labels, evidence_per_candidate)
 
-    evidence_voxels = [int(voxel) for voxel in np.flatnonzero(voxel_has_evidence)]
-    voxel_id_by_coord = {tuple(unique_voxels[voxel].tolist()): voxel for voxel in evidence_voxels}
-    parent = {voxel: voxel for voxel in evidence_voxels}
+    nodes = np.flatnonzero(component_has_evidence[labels])
+    nodes = nodes[np.argsort(labels[nodes], kind='stable')]
+    boundaries = np.flatnonzero(np.diff(labels[nodes])) + 1
+    groups = np.split(nodes, boundaries) if nodes.size else []
 
-    def find_root(node):
-        while parent[node] != node:
-            parent[node] = parent[parent[node]]
-            node = parent[node]
-        return node
-
-    for voxel in evidence_voxels:
-        coord = unique_voxels[voxel].tolist()
-        for dx, dy, dz in NEIGHBOR_OFFSETS:
-            neighbor = voxel_id_by_coord.get((coord[0] + dx, coord[1] + dy, coord[2] + dz))
-            if neighbor is None:
-                continue
-            root_a, root_b = find_root(voxel), find_root(neighbor)
-            if root_a != root_b:
-                parent[root_b] = root_a
-
-    root_of_voxel = np.full(len(unique_voxels), -1, dtype=np.int64)
-    for voxel in evidence_voxels:
-        root_of_voxel[voxel] = find_root(voxel)
-
-    root_of_candidate = root_of_voxel[voxel_of_candidate]
     clusters = []
-    for root in np.unique(root_of_candidate[root_of_candidate >= 0]):
-        local = np.flatnonzero(root_of_candidate == root)
+    for local in groups:
         members = candidate_indices[local]
         member_evidence = evidence_np[:, members]
+        member_rgb = rgb_np[members]
+        member_opacity = opacity_np[members]
         clusters.append({
             'id': len(clusters),
             'member_indices': members,
@@ -122,8 +123,21 @@ def build_voxel_clusters(xyz_np, candidate_mask_np, evidence_np, voxel_size):
             'views_with_evidence': int(member_evidence.any(axis=1).sum()),
             'bbox_min': xyz_np[members].min(axis=0),
             'bbox_max': xyz_np[members].max(axis=0),
+            'rgb_mean': member_rgb.mean(axis=0),
+            'rgb_spread': member_rgb.max(axis=0) - member_rgb.min(axis=0),
+            'opacity_mean': float(member_opacity.mean()),
+            'opacity_spread': float(member_opacity.max() - member_opacity.min()),
         })
-    return clusters
+
+    stats = {
+        'candidates': candidate_count,
+        'pairs_within_radius': pairs_within_radius,
+        'pairs_within_color': pairs_within_color,
+        'pairs_within_opacity': pairs_within_opacity,
+        'components': int(component_count),
+        'components_with_evidence': int(component_has_evidence.sum()),
+    }
+    return clusters, stats
 
 
 def select_clusters(clusters, min_views, max_members, top_k):
