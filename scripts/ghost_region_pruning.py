@@ -23,7 +23,7 @@ def translucent_mask(opacity, max_opacity):
 
 def base_colors(model):
     """RGB in [0, 1] from each Gaussian's DC spherical-harmonic term (view-independent part of the color)."""
-    return (model.get_features[:, 0, :] * SH_C0 + 0.5).clamp(0.0, 1.0)
+    return (model.get_features[:, 0, :].detach() * SH_C0 + 0.5).clamp(0.0, 1.0)
 
 
 def flagged_pixel_mask(render_hwc, reference_hwc, diff_threshold):
