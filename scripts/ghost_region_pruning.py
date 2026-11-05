@@ -26,9 +26,13 @@ def base_colors(model):
     return (model.get_features[:, 0, :].detach() * SH_C0 + 0.5).clamp(0.0, 1.0)
 
 
+def error_map(render_hwc, reference_hwc):
+    """Largest per-channel absolute difference, the quantity the flagged-pixel test thresholds."""
+    return (render_hwc - reference_hwc).abs().max(dim=-1).values
+
+
 def flagged_pixel_mask(render_hwc, reference_hwc, diff_threshold):
-    largest_channel_difference = (render_hwc - reference_hwc).abs().max(dim=-1).values
-    return largest_channel_difference >= diff_threshold
+    return error_map(render_hwc, reference_hwc) >= diff_threshold
 
 
 def dilate_mask(mask_hw, radius_px):
@@ -42,6 +46,12 @@ def dilate_mask(mask_hw, radius_px):
 
 
 def project_centers(camera, centers_xyz):
+    pixels_xy, inside, _ = project_centers_full(camera, centers_xyz)
+    return pixels_xy, inside
+
+
+def project_centers_full(camera, centers_xyz):
+    """Project centers to pixel coordinates. Returns (pixels_xy, inside, depth)."""
     ones = torch.ones((centers_xyz.shape[0], 1), dtype=centers_xyz.dtype, device=centers_xyz.device)
     homogeneous = torch.cat((centers_xyz, ones), dim=1)
     view_points = homogeneous @ camera.world_view_transform
@@ -56,7 +66,31 @@ def project_centers(camera, centers_xyz):
         & (pixel_x >= -0.5) & (pixel_x < width - 0.5)
         & (pixel_y >= -0.5) & (pixel_y < height - 0.5)
     )
-    return torch.stack((pixel_x, pixel_y), dim=1), inside
+    return torch.stack((pixel_x, pixel_y), dim=1), inside, view_points[:, 2]
+
+
+def screen_radii(camera, largest_scale, depth):
+    """Approximate screen-space radius in pixels of each Gaussian's splat."""
+    focal_pixels = 0.5 * float(camera.image_width) / math.tan(0.5 * float(camera.FoVx))
+    return largest_scale * focal_pixels / depth.clamp_min(NEAR_PLANE_DEPTH)
+
+
+def integral_image(values_hw):
+    """Summed-area table, padded so box_sums can index inclusively."""
+    return torch.nn.functional.pad(values_hw, (1, 0, 1, 0)).cumsum(dim=0).cumsum(dim=1)
+
+
+def box_sums(integral_hw, rows, columns, radius):
+    """Sum of the (2 * radius + 1) square around each pixel, clipped to the image."""
+    height = integral_hw.shape[0] - 1
+    width = integral_hw.shape[1] - 1
+    radius = radius.clamp_min(0)
+    top = (rows - radius).clamp(0, height)
+    bottom = (rows + radius + 1).clamp(0, height)
+    left = (columns - radius).clamp(0, width)
+    right = (columns + radius + 1).clamp(0, width)
+    return (integral_hw[bottom, right] - integral_hw[top, right]
+            - integral_hw[bottom, left] + integral_hw[top, left])
 
 
 def evidence_mask(pixels_xy, inside, flagged_hw):
