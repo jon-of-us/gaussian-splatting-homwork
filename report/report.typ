@@ -215,3 +215,7 @@ I pruned the degree-1 model without retraining, using six minimum-opacity thresh
 )
 
 The pruning timings are single runs and are not monotonic with threshold. They include process startup, model loading, pruning, rendering, and writing all five images, so the observed times do not establish a reliable speedup from pruning. The threshold sweep instead shows the trade-off between the number of removed Gaussians and the visual quality of the rendered views.
+
+= Task 4
+
+I realised that There are translucent artifacts that look like the 3D object moved by a bit in 3d space (Especially visible at the orange and the straw.). I suspect this region to come from one wrongly aligned image. I tried to Add a pruning that identifies these areas and removes them, but didnt get it working. you find the code in `ghost_region_pruning_colab.ipynb`.
