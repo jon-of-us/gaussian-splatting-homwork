@@ -93,6 +93,25 @@ def box_sums(integral_hw, rows, columns, radius):
             - integral_hw[bottom, left] + integral_hw[top, left])
 
 
+def scatter_boxes(values, rows, columns, radius, height, width):
+    """Per-pixel sum of `values` over the boxes centred at (rows, columns).
+
+    Uses a 2D difference array, so the cost is one scatter per Gaussian instead of
+    one write per covered pixel.
+    """
+    buffer = torch.zeros((height + 1, width + 1), dtype=values.dtype, device=values.device)
+    radius = radius.clamp_min(0)
+    top = (rows - radius).clamp(0, height)
+    bottom = (rows + radius + 1).clamp(0, height)
+    left = (columns - radius).clamp(0, width)
+    right = (columns + radius + 1).clamp(0, width)
+    corner_rows = torch.cat((top, top, bottom, bottom))
+    corner_columns = torch.cat((left, right, left, right))
+    corner_values = torch.cat((values, -values, -values, values))
+    buffer.index_put_((corner_rows, corner_columns), corner_values, accumulate=True)
+    return buffer.cumsum(dim=0).cumsum(dim=1)[:height, :width]
+
+
 def evidence_mask(pixels_xy, inside, flagged_hw):
     height, width = flagged_hw.shape
     columns = torch.round(pixels_xy[:, 0]).long().clamp(0, width - 1)
